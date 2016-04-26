@@ -1,0 +1,29 @@
+{
+  "name": "angular-arrays",
+  "version": "1.0.0",
+  "homepage": "https://github.com/r3plica/angular-arrays",
+  "authors": [
+    "Jaymie Jeffrey <jaymie@r3plica.co.uk>"
+  ],
+  "description": "Simple service for working with arrays",
+  "main": "dist/angular.arrays.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "arrays",
+    "ngArrays",
+    "ng-angular-arrays",
+    "angular.arrays"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies" : {
+  }
+}
