@@ -102,6 +102,10 @@
     // Sorts an array by the key
     function sortOn(array, name) {
 
+    	// If we have no array, exit the function
+    	if (!array)
+    		return;
+
         // Call sort
         array.sort(function (a, b) {
 
