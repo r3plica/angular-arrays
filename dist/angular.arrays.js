@@ -85,7 +85,7 @@
     function modify(array, value, key) {
 
         // Get our index
-        var index = self.indexOf(array, value, key);
+        var index = indexOf(array, value, key);
 
         // If we find a positive index
         if (index > -1) {
