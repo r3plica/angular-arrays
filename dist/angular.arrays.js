@@ -11,7 +11,7 @@
   	var arrayService = {
   		indexOf: indexOf,
 		insertIfNotExist: insertIfNotExist,
-  		modifiy: modify,
+  		modify: modify,
   		sortOn: sortOn,
   	}
 
@@ -100,25 +100,29 @@
     };
 
     // Sorts an array by the key
-    function sortOn(array, name) {
+    function sortOn(array, keys) {
 
     	// If we have no array, exit the function
     	if (!array)
     		return;
+            
+        // If we have no keys
+        if (!keys || !keys.length) {
 
-        // Call sort
-        array.sort(function (a, b) {
+            // Call sort
+            array.sort(function (a, b) {
 
-            // If our attribute name is not the same as the second attribute
-            if (a[name] <= b[name]) {
+                // If our attribute name is not the same as the second attribute
+                if (a[name] <= b[name]) {
 
-                // Return -1
-                return (-1);
-            }
+                    // Return -1
+                    return (-1);
+                }
 
-            // Otherwise return 1
-            return (1);
-        });
+                // Otherwise return 1
+                return (1);
+            });
+        }
     };
   };
 }());
