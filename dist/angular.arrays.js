@@ -46,11 +46,8 @@
                 // If we have a key
                 if (key) {
 
-                    // If the key is a string
-                    if (typeof key === 'string')
-                        if (item[key] === value[key])
-                            break;
-                    else 
+                    // If the key is an array
+                    if (Array.isArray(key)) 
                     {
                         
                         // Create a boolean
@@ -75,7 +72,12 @@
 
                         // If found is still true, then exit the while loop
                         if (found) break;
-                    }                    
+
+                    // If they key is not an array (it must be a string)
+                    }  
+                    else
+                        if (item[key] === value[key])
+                            break;
 
                     // Otherwise, we do a normal index of
                 } else {
