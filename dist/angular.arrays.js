@@ -46,9 +46,36 @@
                 // If we have a key
                 if (key) {
 
-                    // If we find our value, break the loop
-                    if (item[key] === value[key])
-                        break;
+                    // If the key is a string
+                    if (typeof key === 'string')
+                        if (item[key] === value[key])
+                            break;
+                    else 
+                    {
+                        
+                        // Create a boolean
+                        var found = true;
+                        
+                        // Loop through our keys
+                        for(var k = 0; k < key.length; k++) {
+
+                            // Get our current key
+                            var keyName = key[k];
+
+                            // If we are not the same value
+                            if (item[keyName] !== value[keyName]) {
+
+                                // Set our boolean to false
+                                found = false;
+
+                                // Exit the loop
+                                break;
+                            } 
+                        }
+
+                        // If found is still true, then exit the while loop
+                        if (found) break;
+                    }                    
 
                     // Otherwise, we do a normal index of
                 } else {
