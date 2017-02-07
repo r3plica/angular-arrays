@@ -127,27 +127,38 @@
     };
 
     // Sorts an array by the key
-    function sortOn(array, keys) {
+    function sortOn(array, key) {
 
     	// If we have no array, exit the function
     	if (!array)
     		return;
             
-        // If we have no keys
-        if (!keys || !keys.length) {
+        // If we have no key
+        if (!key) {
 
             // Call sort
             array.sort(function (a, b) {
 
-                // If our attribute name is not the same as the second attribute
-                if (a[name] <= b[name]) {
+            	// Get our values
+            	var aValue = a[key],
+            		bValue = b[key];
 
-                    // Return -1
-                    return (-1);
-                }
+        		// If we are a date
+        		if (typeof aValue.getMonth === 'function') {
 
-                // Otherwise return 1
-                return (1);
+        			// Sort by date
+        			return new Date(bValue) - new Date(aValue);
+        		}
+
+        		// If we are a string
+        		if (typeof aValue === 'string') {
+
+        			// Sort by string
+        			return aValue.localeCompare(bValue);
+        		}
+
+                // Default
+                return aValue - bValue;
             });
         }
     };
